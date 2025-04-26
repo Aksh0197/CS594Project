@@ -1,8 +1,8 @@
 import torch.nn as nn
 import torchvision.models as models
-from models.student_resnet18 import get_student_model
+#from models.student_model import get_student_model
 
-student = get_student_model()
+#student = get_student_model()
 
 def get_student_model(num_classes=10, pretrained=False):
     """
