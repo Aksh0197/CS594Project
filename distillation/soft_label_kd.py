@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class SoftLabelDistillationLoss(nn.Module):
-    def _init_(self, temperature=4.0, alpha=0.7):
+    def __init__(self, temperature=4.0, alpha=0.7):
         """
         Soft Label Knowledge Distillation loss function.
 
@@ -11,7 +11,7 @@ class SoftLabelDistillationLoss(nn.Module):
             temperature (float): Controls softening of logits (higher = softer).
             alpha (float): Balances between KD loss and true label loss.
         """
-        super(SoftLabelDistillationLoss, self)._init_()
+        super(SoftLabelDistillationLoss, self).__init__()
         self.temperature = temperature
         self.alpha = alpha
         self.kl_div = nn.KLDivLoss(reduction='batchmean')
