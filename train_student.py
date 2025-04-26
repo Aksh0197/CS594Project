@@ -5,7 +5,7 @@ import torch.optim as optim
 from torch.optim.lr_scheduler import StepLR
 
 from models.teacher_resnet50 import get_teacher_model
-from models.student_resnet18 import get_student_model
+from models.student_model import get_student_model
 from data_loader.cifar10_loader import get_cifar10_dataloaders
 from distillation.soft_label_kd import SoftLabelDistillationLoss
 
