@@ -7,7 +7,7 @@ def get_sst2_dataloaders(model_name='bert-base-uncased', batch_size=32, max_leng
     dataset = load_dataset("glue", "sst2")
     # Limit training data to first 10,000 examples for faster training
     dataset['train'] = dataset['train'].select(range(10000))
-
+    dataset['validation'] = dataset['validation'].select(range(1000))
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     # Tokenization function
