@@ -5,6 +5,8 @@ from transformers import AutoTokenizer
 def get_sst2_dataloaders(model_name='bert-base-uncased', batch_size=32, max_length=128):
     # Load SST-2 dataset
     dataset = load_dataset("glue", "sst2")
+    # Limit training data to first 10,000 examples for faster training
+    dataset['train'] = dataset['train'].select(range(10000))
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
