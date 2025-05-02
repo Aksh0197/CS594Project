@@ -6,7 +6,7 @@ from transformers import get_scheduler
 from models.teacher_bert import get_teacher_model
 from data_loader.sst2_loader import get_sst2_dataloaders
 
-def train_teacher_nlp(epochs=3, batch_size=32, lr=2e-5):
+def train_teacher_nlp(epochs=2, batch_size=16, lr=2e-5):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Load SST-2 Data
